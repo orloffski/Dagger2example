@@ -3,12 +3,17 @@ package development.madcat.dagger2example;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import javax.inject.Inject;
+
 import development.madcat.dagger2example.classes.DatabaseHelper;
 import development.madcat.dagger2example.classes.NetworkUtils;
 
 public class MainActivity extends AppCompatActivity {
 
+    @Inject
     DatabaseHelper databaseHelper;
+
+    @Inject
     NetworkUtils networkUtils;
 
     @Override
@@ -16,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        databaseHelper = App.getComponent().getDatabaseHelper();
-        networkUtils = App.getComponent().getNetworkUtils();
+        networkUtils.test();
+        databaseHelper.test();
     }
 }
