@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        App.getComponent().injectsMainActivity(this);
+
         networkUtils.test();
         databaseHelper.test();
     }
