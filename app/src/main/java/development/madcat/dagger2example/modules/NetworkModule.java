@@ -7,8 +7,14 @@ import development.madcat.dagger2example.classes.NetworkUtils;
 @Module
 public class NetworkModule {
 
+    private String ipAdress;
+
+    public NetworkModule(String ipAdress) {
+        this.ipAdress = ipAdress;
+    }
+
     @Provides
     NetworkUtils provideNetworkUtils(){
-        return new NetworkUtils();
+        return new NetworkUtils(this.ipAdress);
     }
 }
