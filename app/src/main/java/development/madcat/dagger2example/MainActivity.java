@@ -10,6 +10,7 @@ import development.madcat.dagger2example.classes.DatabaseHelper;
 import development.madcat.dagger2example.classes.MailHelper;
 import development.madcat.dagger2example.classes.NetworkUtils;
 import development.madcat.dagger2example.components.MailComponent;
+import development.madcat.dagger2example.modules.MailModule;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         App.getComponent().injectsMainActivity(this);
-        App.getComponent().createMailComponent().injectsMainActivity(this);
+        App.getComponent().createMailComponent(new MailModule("orloffski@gmail.com")).injectsMainActivity(this);
 
         networkUtils.test();
         databaseHelper.test();

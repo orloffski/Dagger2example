@@ -7,9 +7,15 @@ import development.madcat.dagger2example.classes.MailHelper;
 @Module
 public class MailModule {
 
+    private String eMail;
+
+    public MailModule(String eMail) {
+        this.eMail = eMail;
+    }
+
     @Provides
-    MailHelper provideDatabaseHelper(){
-        return new MailHelper();
+    MailHelper provideMailHelper(){
+        return new MailHelper(this.eMail);
     }
 
 }
