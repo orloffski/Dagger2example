@@ -7,5 +7,8 @@ import development.madcat.dagger2example.modules.StorageModule;
 
 @Component(modules = {StorageModule.class, NetworkModule.class})
 public interface AppComponent {
+
+    MailComponent createMailComponent();
+
     void injectsMainActivity(MainActivity mainActivity);
 }
