@@ -11,6 +11,6 @@ public class DatabaseHelper {
     }
 
     public void test(){
-        Log.d("Test", "Test message from DatabaseHelper - databaseName: " + this.databaseName);
+        Log.d("Test", "Test message from DatabaseHelper - databaseName: " + this.databaseName + " id: " + this);
     }
 }

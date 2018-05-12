@@ -10,6 +10,6 @@ public class NetworkUtils {
     }
 
     public void test(){
-        Log.d("Test", "Test message from NetworkUtils - ipAdress: " + this.ipAdress);
+        Log.d("Test", "Test message from NetworkUtils - ipAdress: " + this.ipAdress + " id: " + this);
     }
 }
