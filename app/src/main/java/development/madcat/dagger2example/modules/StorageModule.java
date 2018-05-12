@@ -1,23 +1,23 @@
 package development.madcat.dagger2example.modules;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 import development.madcat.dagger2example.classes.DatabaseHelper;
+import development.madcat.dagger2example.scopes.PerApplication;
 
 @Module
 public class StorageModule {
 
-    @Singleton
+    @PerApplication
     @Named("database_one")
     @Provides
     DatabaseHelper provideDatabaseHelper(){
         return new DatabaseHelper("database_1");
     }
 
-    @Singleton
+    @PerApplication
     @Named("database_two")
     @Provides
     DatabaseHelper provideDatabaseHelperTest(){
