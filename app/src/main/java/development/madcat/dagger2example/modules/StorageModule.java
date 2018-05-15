@@ -14,13 +14,13 @@ public class StorageModule {
     @Named("database_one")
     @Provides
     DatabaseHelper provideDatabaseHelper(){
-        return new DatabaseHelper("database_1");
+        return new DatabaseHelper();
     }
 
     @PerApplication
     @Named("database_two")
     @Provides
     DatabaseHelper provideDatabaseHelperTest(){
-        return new DatabaseHelper("database_test");
+        return new DatabaseHelper();
     }
 }

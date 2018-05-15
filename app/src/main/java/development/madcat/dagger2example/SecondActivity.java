@@ -32,5 +32,7 @@ public class SecondActivity extends AppCompatActivity {
         databaseHelper.test();
         databaseHelperTest.test();
         networkUtils.test();
+
+        App.getComponent().createSecondActivityComponent().getSecondActivityHelper().test();
     }
 }

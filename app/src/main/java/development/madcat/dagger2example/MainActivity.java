@@ -10,10 +10,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import development.madcat.dagger2example.classes.DatabaseHelper;
-import development.madcat.dagger2example.classes.MailHelper;
 import development.madcat.dagger2example.classes.NetworkUtils;
-import development.madcat.dagger2example.components.MailComponent;
-import development.madcat.dagger2example.modules.MailModule;
+import development.madcat.dagger2example.components.MainActivityComponent;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -28,9 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Inject
     NetworkUtils networkUtils;
 
-    @Inject
-    MailHelper mailHelper;
-
     Button btnSecond;
 
     @Override
@@ -38,16 +33,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnSecond = (Button)findViewById(R.id.btnSecond);
+        btnSecond = findViewById(R.id.btnSecond);
         btnSecond.setOnClickListener(this);
 
         App.getComponent().injectsMainActivity(this);
-        App.getComponent().createMailComponent(new MailModule("orloffski@gmail.com")).injectsMainActivity(this);
 
         networkUtils.test();
         databaseHelper.test();
         databaseHelperTest.test();
-        mailHelper.test();
+
+        App.getComponent().createMainActivityComponent().getMainActivityHelper().test();
     }
 
     @Override

@@ -2,9 +2,8 @@ package development.madcat.dagger2example.classes;
 
 import android.util.Log;
 
-public class DatabaseHelper {
-
+public class SecondActivityHelper {
     public void test(){
-        Log.d("Test", "Test message from DatabaseHelper - id: " + this);
+        Log.d("Test", "SecondActivityHelper - id: " + this);
     }
 }
